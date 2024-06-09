@@ -13,15 +13,14 @@ function Header() {
     name: "user",
     type: "user",
   });
-  const [islogin,setlogin] = useState(false);
-  useEffect(() => {
-    const toggleLogin = () =>{
-      setlogin(!islogin);
-    }
-  }, []);
+  const [islogin,setlogin] = useState(true);
+  const toggleLogin = () =>{
+    setlogin(!islogin);
+  }
+
   return (
     <div>
-      <header className="container-fluid shadow p-3 mb-5  rounded">
+      <header className="container-fluid shadow p-3 mb-5  rounded position-fixed z-3 mb-2 bg-white">
         <nav className="row">
           <div className="col-3">
             <h3 className="text-dark">
@@ -115,7 +114,7 @@ function Header() {
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
+                      <a className="dropdown-item" onClick={toggleLogin}>
                         Sign out
                       </a>
                     </li>
