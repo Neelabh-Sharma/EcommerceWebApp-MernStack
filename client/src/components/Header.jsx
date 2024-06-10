@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaShoppingBag } from "react-icons/fa";
+import { FaSearch, FaShoppingBag } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 function Header() {
   const nevigate = useNavigate();
@@ -11,11 +11,12 @@ function Header() {
   };
   const [user, setUser] = useState({
     name: "user",
-    type: "user",
+    type: "admin",
   });
   const [islogin,setlogin] = useState(true);
   const toggleLogin = () =>{
     setlogin(!islogin);
+    nevigate('/');
   }
 
   return (
@@ -47,15 +48,22 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a href="#" className="nav-link  fs-5 text-dark">
+              <Link to="/faq" className="nav-link" >
+                <a  className="fs-5 text-dark">
                   FAQs & Policy
                 </a>
+                </Link>
               </li>
             </ul>
           </div>
           <div className="col-3 d-flex  justify-content-end mt-2">
             {(user.name && islogin) ? (
               <>
+              <Link to="/search" className="nav-link">
+                  <div className="me-4 mt-1">
+                    <FaSearch className="fs-3" />
+                  </div>
+                </Link>
                 <Link to="/cart" className="nav-link">
                   <div className="me-4 d-flex flex-column">
                     <FaShoppingBag className="fs-3" />

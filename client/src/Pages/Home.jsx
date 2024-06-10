@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import axios from "axios";
 import {
-  FaCartArrowDown,
-  FaCartPlus,
   FaRupeeSign,
   FaStar,
 } from "react-icons/fa";
