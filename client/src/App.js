@@ -7,6 +7,8 @@ import Cart from "./Pages/Cart";
 import Order from "./Pages/Order";
 import Profile from "./Pages/Profile";
 import Dashboard from "./Pages/Dashboard";
+import FAQ from "./Pages/FAQ";
+import Search from "./Pages/Search";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
           <Route path="/order" element={<Order/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/faq" element={<FAQ/>}/>
+          <Route path="/search" element={<Search/>}/>
         </Routes>
       </BrowserRouter>
     </React.Fragment>
